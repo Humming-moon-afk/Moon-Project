@@ -3,7 +3,7 @@ import java.nio.file.Path;
 
 public class Lexapro {
     public static void main(String [] args) {
-        System.out.println("---Mooon Stats---")
+        System.out.println("---Mooon Stats---");
         System.out.println("...");
 
         for(int i = 1; i <= 5; i++) {
@@ -15,6 +15,6 @@ public class Lexapro {
 
             Thread.sleep(1500);
         }
-        Syste.out.println("Messung schließt sich...")
+        Syste.out.println("Messung schließt sich...");
     }
 }
