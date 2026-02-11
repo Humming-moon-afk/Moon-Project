@@ -9,12 +9,12 @@ public class Lexapro {
         for(int i = 1; i <= 5; i++) {
             String tempRaw = Files.readString(Path.of("sys/class/thermal/thermal_zone0/temp")).trim();
 
-            double tempCelsius = Double.parseDouble(temp) / 1000.0;
+            double tempCelsius = Double.parseDouble(tempRaw) / 1000.0;
             System.out.println("Check # " + i);
             System.out.println("Aktuelle Temperatur: " + tempCelsius);
 
             Thread.sleep(1500);
         }
-        Syste.out.println("Messung schließt sich...");
+        System.out.println("Messung schließt sich...");
     }
 }
