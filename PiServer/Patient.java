@@ -43,9 +43,10 @@ public class Patient {
         return groesse;
     }
     public double berechneBMI() {
-        return Patient.getGroesse / Patient.getGewicht;
+        return gewicht / (groesse * groesse);
     }
     public void zeigeInfo() {
-        System.out.println(Patient.getName + " " + Math.round(Patient.BMI, 2);
+        double bmi = berechneBMI();
+        System.out.println(name + " " + String.format("%.2f", bmi));
     }
 }
