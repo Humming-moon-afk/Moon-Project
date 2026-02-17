@@ -1,20 +1,34 @@
+import java.util.ArrayList;
+
 public class Patient {
     private String name;
     private int alter;
     private int gewicht;
-    private int puls;
     private double groesse;
-    public Patient(String name, int alter, int gewicht, int puls, double groesse) {
+    private ArrayList<Integer> pulsHistorie;
+    public Patient(String name, int alter, int gewicht, double groesse) {
         this.name = name;
         this.alter = alter;
         this.gewicht = gewicht;
-        this.puls = puls;
         this.groesse = groesse;
+        this.pulsHistorie = new ArrayList<>();
     }
     public String getName() {
         return name;
     }
-
+    public void neuerPulsWert(int wert) {
+        pulsHistorie.add(wert);
+    }
+    public int getDurchSchnittPuls() {
+        if(pulsHistorie.isEmpty()) {
+            return 0;
+        }
+        int summe = 0;
+        for(int i = 0; i < pulsHistorie.size(); i++) {
+            summe += pulsHistorie.get(i);
+        }
+        return summe / pulsHistorie.size();
+    }
     public void setName(String name) {
         this.name = name;
     }
@@ -29,12 +43,6 @@ public class Patient {
     }
     public void setGewicht(int gewicht) {
         this.gewicht = gewicht;
-    }
-    public int getPuls() {
-        return puls;
-    }
-    public void setPuls(int puls) {
-        this.puls = puls;
     }
     public void setGroesse(double groesse) {
         this.groesse = groesse;
